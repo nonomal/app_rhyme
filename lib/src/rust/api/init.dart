@@ -4,9 +4,9 @@
 // ignore_for_file: invalid_use_of_internal_member, unused_import, unnecessary_import
 
 import '../frb_generated.dart';
-import 'config.dart';
-import 'music_sdk.dart';
 import 'package:flutter_rust_bridge/flutter_rust_bridge_for_generated.dart';
+import 'types/config.dart';
+import 'types/extern_api.dart';
 
-Future<(SqlMusicFactoryW, Config)> initStore({required String storeRoot}) =>
-    RustLib.instance.api.crateApiInitInitStore(storeRoot: storeRoot);
+Future<Config> initBackend({required String storeRoot}) =>
+    RustLib.instance.api.crateApiInitInitBackend(storeRoot: storeRoot);
